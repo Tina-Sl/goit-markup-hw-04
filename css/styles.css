@@ -85,7 +85,7 @@ img {
  .menu-item-studio::after {
     position: absolute;
     left: 0;
-    bottom: 1px;
+    bottom: -1px;
     border-radius: 2px;
     width: 100%;
     height: 4px;
@@ -120,17 +120,13 @@ img {
     rgba(46, 47, 66, 0.7) ,
     rgba(46, 47, 66, 0.7)) ,
     url("../images/people-office.jpg"); 
+  max-width: 1440px;
+  margin: 0 auto;
   background-repeat: no-repeat;
-  background-position: center center;
-  /* background-attachment: fixed;  */
-  background-size: cover; 
+  background-position: center;
+  background-size: cover;  */
   color: #fff; 
-  
  }
-.container-hero {
-  max-width: 1440px; 
-}
-
  
  .hero-title{
   font-weight: 700;
@@ -270,21 +266,25 @@ img {
   gap: 24px;
   margin-top: 8px;
 }
-.team-icons-link { 
-  display: flex;
+.team-icons-item { 
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+}
+ .team-icons-link {
+  width: 100%;
+  height: 100%;
   background-color: #4d5ae5;
-  justify-content:  center;
-  align-items:  center;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
  }
 .team-icons-link:hover, .team-icons-link:focus {
-  background-color: #31d0aa;
+  background-color: #404bbf;
 }
-.team-icons-item {
-  fill: #fff;
+.team-icons-svg {
+  fill: #f4f4fd;
 }
 
 /* styles section 4 */
@@ -309,20 +309,24 @@ img {
 .projects-card{
   flex-basis: calc((100% - 48px) / 3);
   background-color: #fff; 
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 } 
+.projects-card:hover {
+  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
+    0 1px 1px 0 rgba(46, 47, 66, 0.16),
+    0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
 .projects-card-item {
   position: relative; 
   overflow: hidden;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  }
+
 .projects-card-overlay {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
   background-color: #4d5ae5;
-  padding-top: 40px;
-  padding-left: 32px;
-  padding-right: 32px;
+  padding: 40px 32px;
   position: absolute;
   top: 0;
   left: 0;
@@ -331,11 +335,7 @@ img {
   transform: translateY(100%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
-.projects-card:hover {
-  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
-   0 1px 1px 0 rgba(46, 47, 66, 0.16), 
-   0 1px 6px 0 rgba(46, 47, 66, 0.08);
-}
+
 .projects-card-item:hover .projects-card-overlay {
   transform: translateY(0);
 }
@@ -368,9 +368,12 @@ img {
 }
 .container-footer {
   display: flex;
+  align-items: baseline;
   gap: 120px;
 }
-
+.footer-first {
+  margin-right: 120px;
+}
 .footer-logo {
   display: inline-block;
   font-family: "Raleway", sans-serif;
@@ -420,5 +423,5 @@ img {
   background-color: #31d0aa;
 }
 .social-icons-item {
-  fill: #fff;
+  fill: #f4f4fd;
 }
